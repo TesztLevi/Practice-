@@ -42,14 +42,19 @@ namespace P03_UserMaintenance
 
         private void Button1_Click(object sender, EventArgs e)
         {
+            
+            
+        }
+
+        private void Button1_Click_1(object sender, EventArgs e)
+        {
             User user = new User();
 
             user.Fullname = textBox1.Text;
-            
+
             Users.Add(user);
 
             //textBox1.Clear();
-            
         }
     }
 }
