@@ -126,6 +126,9 @@
   <data name="Fullname" xml:space="preserve">
     <value>Neved </value>
   </data>
+  <data name="Load" xml:space="preserve">
+    <value>Betöltés</value>
+  </data>
   <data name="Save" xml:space="preserve">
     <value>Kimentés </value>
   </data>

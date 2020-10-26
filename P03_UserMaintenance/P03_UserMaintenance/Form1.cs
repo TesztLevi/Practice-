@@ -25,6 +25,7 @@ namespace P03_UserMaintenance
             button1.Text = Resource1.Add;
             button2.Text = Resource1.Save;
             button3.Text = Resource1.Delete;
+            button4.Text = Resource1.Load;
 
             listBox1.DataSource = Users;
             listBox1.ValueMember = "ID";
@@ -80,6 +81,36 @@ namespace P03_UserMaintenance
 
 
             
+        }
+
+        private void Button4_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            if (ofd.ShowDialog() != DialogResult.OK) return;
+            using (StreamReader sr = new StreamReader(ofd.FileName, Encoding.Default))
+            {
+                while (!sr.EndOfStream)
+                {
+                    string[] sor = sr.ReadLine().Split(';');
+
+                    User s = new User();
+
+
+
+
+                    try
+                    {
+                        s.ID = Guid.Parse(sor[0]);
+                    }
+                    catch
+                    { }
+                    s.Fullname = sor[1];
+
+                    Users.Add(s);
+
+                }
+
+            }
         }
     }
 }

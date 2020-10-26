@@ -88,6 +88,15 @@ namespace P03_UserMaintenance {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Betöltés.
+        /// </summary>
+        internal static string Load {
+            get {
+                return ResourceManager.GetString("Load", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Kimentés .
         /// </summary>
         internal static string Save {
