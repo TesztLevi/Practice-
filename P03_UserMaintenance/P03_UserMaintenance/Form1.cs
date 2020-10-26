@@ -24,6 +24,7 @@ namespace P03_UserMaintenance
             
             button1.Text = Resource1.Add;
             button2.Text = Resource1.Save;
+            button3.Text = Resource1.Delete;
 
             listBox1.DataSource = Users;
             listBox1.ValueMember = "ID";
@@ -37,16 +38,9 @@ namespace P03_UserMaintenance
 
         }
 
-        private void ListBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
+        
 
-        }
-
-        private void Button1_Click(object sender, EventArgs e)
-        {
-            
-            
-        }
+        
 
         private void Button1_Click_1(object sender, EventArgs e)
         {
@@ -56,7 +50,7 @@ namespace P03_UserMaintenance
 
             Users.Add(user);
 
-            //textBox1.Clear();
+            textBox1.Clear();
         }
 
         private void Button2_Click(object sender, EventArgs e)
@@ -76,6 +70,16 @@ namespace P03_UserMaintenance
                     sw.WriteLine();
                 }
             }
+        }
+
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            User s = (User)listBox1.SelectedItem;
+            Users.Remove(s);
+            
+
+
+            
         }
     }
 }
