@@ -77,5 +77,14 @@ namespace P03_UserMaintenance {
                 return ResourceManager.GetString("Fullname", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kimentés .
+        /// </summary>
+        internal static string Save {
+            get {
+                return ResourceManager.GetString("Save", resourceCulture);
+            }
+        }
     }
 }
