@@ -14,12 +14,13 @@ namespace P03_UserMaintenance
     public partial class Form1 : Form
     {
         BindingList<User> Users = new BindingList<User>();
+
         public Form1()
         {
             InitializeComponent();
 
-            label1.Text = Resource1.LastName;
-            label2.Text = Resource1.FirstName;
+            label1.Text = Resource1.Fullname;
+            
             button1.Text = Resource1.Add;
 
             listBox1.DataSource = Users;
@@ -42,12 +43,13 @@ namespace P03_UserMaintenance
         private void Button1_Click(object sender, EventArgs e)
         {
             User user = new User();
-            user.Lastname = textBox1.Text;
-            user.Firstname = textBox2.Text;
+
+            user.Fullname = textBox1.Text;
+            
             Users.Add(user);
 
-            textBox1.Clear();
-            textBox2.Clear();
+            //textBox1.Clear();
+            
         }
     }
 }
