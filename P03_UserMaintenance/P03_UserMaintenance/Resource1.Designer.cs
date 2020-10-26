@@ -70,20 +70,20 @@ namespace P03_UserMaintenance {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Utónév.
+        ///   Looks up a localized string similar to Neved .
         /// </summary>
-        internal static string FirstName {
+        internal static string Fullname {
             get {
-                return ResourceManager.GetString("FirstName", resourceCulture);
+                return ResourceManager.GetString("Fullname", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Vezetéknév.
+        ///   Looks up a localized string similar to Kimentés .
         /// </summary>
-        internal static string LastName {
+        internal static string Save {
             get {
-                return ResourceManager.GetString("LastName", resourceCulture);
+                return ResourceManager.GetString("Save", resourceCulture);
             }
         }
     }
