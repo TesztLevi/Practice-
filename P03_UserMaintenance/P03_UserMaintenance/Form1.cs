@@ -15,6 +15,19 @@ namespace P03_UserMaintenance
         public Form1()
         {
             InitializeComponent();
+            label1.Text = Resource1.LastName;
+            label2.Text = Resource1.FirstName;
+            button1.Text = Resource1.Add;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
