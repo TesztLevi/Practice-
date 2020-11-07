@@ -74,6 +74,11 @@ namespace P04_Excel
                 "Alapterület (m2)",
                 "Ár (mFt)",
                 "Négyzetméter ár (Ft/m2)"};
+
+            for (int i = 0; i < 9; i++)
+            {
+                xlSheet.Cells[1, i+1] = headers[i];
+            }
         }
 
         private void LoadData()
