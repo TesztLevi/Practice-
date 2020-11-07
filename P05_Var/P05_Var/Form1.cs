@@ -12,9 +12,21 @@ namespace P05_Var
 {
     public partial class Form1 : Form
     {
+        List<Tick> Ticks;
+        PortfolioEntities context = new PortfolioEntities();
+
         public Form1()
         {
+
             InitializeComponent();
+            Ticks = context.Ticks.ToList();
+            dataGridView1.DataSource = Ticks;
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
