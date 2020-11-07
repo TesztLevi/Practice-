@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,7 +18,8 @@ namespace P05_Var
         PortfolioEntities context = new PortfolioEntities();
 
         List<PortfolioItem> Portfolios = new List<PortfolioItem>();
-
+        List<decimal> Nyereségek = new List<decimal>();
+        
         public Form1()
         {
 
@@ -41,7 +43,7 @@ namespace P05_Var
             }
 
 
-            List<decimal> Nyereségek = new List<decimal>();
+            
             int intervalum = 30;
             DateTime kezdőDátum = (from x in Ticks select x.TradingDay).Min();
             DateTime záróDátum = new DateTime(2016, 12, 30);
@@ -52,6 +54,7 @@ namespace P05_Var
                            - GetPortfolioValue(kezdőDátum.AddDays(i));
                 Nyereségek.Add(ny);
                 Console.WriteLine(i + " " + ny);
+                
             }
 
             var nyereségekRendezve = (from x in Nyereségek
@@ -59,8 +62,8 @@ namespace P05_Var
                                       select x)
                                         .ToList();
             MessageBox.Show(nyereségekRendezve[nyereségekRendezve.Count() / 5].ToString());
-
-
+            
+            
         }
 
         
@@ -78,6 +81,28 @@ namespace P05_Var
 
         private void Form1_Load(object sender, EventArgs e)
         {
+
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sf = new SaveFileDialog();
+            if (sf.ShowDialog() != DialogResult.OK) return;
+            using (StreamWriter sw = new StreamWriter(sf.FileName, false, Encoding.UTF8))
+            {
+                sw.Write("Időszak");
+                sw.Write(" ");
+                sw.Write("Nyereség");
+                sw.WriteLine();
+
+                foreach (Decimal p in Nyereségek)
+                {
+                    //sw.Write(p.idő);
+                    //sw.Write(p.);
+                    sw.WriteLine();
+                }
+            }
+                
 
         }
     }
