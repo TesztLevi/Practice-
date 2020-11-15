@@ -8,5 +8,7 @@ namespace P02_Soduko
 {
     class Sudoku
     {
+        public string Quize { get; set; }
+        public string Solution { get; set; }
     }
 }
