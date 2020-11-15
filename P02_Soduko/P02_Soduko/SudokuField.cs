@@ -18,18 +18,15 @@ namespace P02_Soduko
             set
             {
                 _value = value;
-                if (_value > 9)
-                { _value = 0; }
                 if (_value < 0)
-                { _value = 9; }
+                    _value = 9;
+                else if (_value > 9)
+                    _value = 0;
+
                 if (_value == 0)
-                {
-                    Text = null;
-                }
+                    Text = "";
                 else
-                {
-                    Text = (_value).ToString();
-                }
+                    Text = _value.ToString();
             }
         }
 

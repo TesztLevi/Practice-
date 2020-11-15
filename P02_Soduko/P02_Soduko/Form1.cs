@@ -46,7 +46,7 @@ namespace P02_Soduko
                     SudokuField s = new SudokuField();
                     s.Top = i * 30 + (int)(Math.Floor((double)(i / 3))) * lineWidth;
                     s.Left = j * 30 + (int)(Math.Floor((double)(j / 3))) * lineWidth;
-                    panel1.Controls.Add(s);
+                    mainPanel.Controls.Add(s);
                 }
             }
         }
