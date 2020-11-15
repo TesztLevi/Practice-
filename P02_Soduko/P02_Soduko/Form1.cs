@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,8 @@ namespace P02_Soduko
 {
     public partial class Form1 : Form
     {
+        List<Sudoku> sudokus= new List<Sudoku>();
+
         public Form1()
         {
             CratePlayField();
@@ -33,7 +36,22 @@ namespace P02_Soduko
 
         private void LoadSusokus()
         {
-            throw new NotImplementedException();
+            sudokus.Clear();
+            using (StreamReader sr = new StreamReader("sudoku.csv", Encoding.Default))
+            {
+                sr.ReadLine();
+                while (!sr.EndOfStream)
+                {
+                    string[] line = sr.ReadLine().Split(',');
+                    Sudoku s = new Sudoku();
+                    s.Quize = line[1];
+                    s.Solution = line[2];
+                    sudokus.Add(s);
+
+
+                }
+
+            }
         }
 
         private void CratePlayField()
